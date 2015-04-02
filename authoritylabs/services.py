@@ -38,3 +38,7 @@ class AuthorityLabsPartnerApi(HTTPServiceClient):
                 'locale': locale,
                 'rank_date': rank_date,
             }).json()
+
+    @memoized_ttl(ttl=86400)
+    def get_locales(self, engine):
+        return self.get('supported/{0}.json'.format(engine)).json()['locales']

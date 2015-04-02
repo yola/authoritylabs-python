@@ -20,13 +20,13 @@ class AuthorityLabsPartnerApi(HTTPServiceClient):
 
         path = '/keywords%s' % ('/priority' if immediate else '')
 
-        return self.post(
+        self.post(
             path,
             data={
                 'keyword': keyword,
                 'engine': engine,
                 'locale': locale,
-            }).json()
+            })
 
     def get_results(self, keyword, engine, locale, rank_date):
         return self.get(

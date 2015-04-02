@@ -1,0 +1,4 @@
+demands==1.0.6
+property-caching==1.0.3
+querylist==0.2.0
+unittest2==1.0.1

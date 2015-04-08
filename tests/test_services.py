@@ -11,9 +11,10 @@ Tests for `authoritylabs.services` module.
 import unittest2
 
 from authoritylabs.services import AuthorityLabsPartnerApi
+from tests import PatchedSessionTests
 
 
-class TestPartnerApi(unittest2.TestCase):
+class ServicesTestCase(PatchedSessionTests):
     def setUp(self):
         self.client = AuthorityLabsPartnerApi(
             api_key='test_key', account_id='test_id')

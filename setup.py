@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 with open('README.md') as readme_file:
@@ -32,16 +28,11 @@ setup(
     author="Yola",
     author_email='engineers@yola.com',
     url='https://github.com/yola/authoritylabs-python',
-    packages=[
-        'authoritylabs',
-    ],
-    package_dir={'authoritylabs':
-                 'authoritylabs'},
-    include_package_data=True,
+    packages=find_packages(exclude=('tests*',)),
     install_requires=requirements,
     license="MIT",
     zip_safe=False,
-    keywords='authoritylabs',
+    keywords='authoritylabs development',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
